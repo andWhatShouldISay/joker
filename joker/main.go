@@ -53,7 +53,7 @@ func main() {
 	} else if mode == "dump" {
 		dump := func() {
 			n := 5
-			if flag.Arg(1) == "-n" {
+			if flag.Arg(1) == "-n" { // не получилось использовать встроенную библиотеку flag, просто потому что она игнорирует флаги после нефлагов, чем является слово dump 
 				nval, err := strconv.ParseInt(flag.Arg(2), 10, 64)
 				if err != nil {
 					usage()
